@@ -83,6 +83,12 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
+				<groupId>org.testng</groupId>
+				<artifactId>testng</artifactId>
+				<version>6.7</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
 				<groupId>org.osgi</groupId>
 				<artifactId>osgi_R4_core</artifactId>
 				<version>1.0</version>
@@ -93,12 +99,6 @@
 				<artifactId>osgi_R4_compendium</artifactId>
 				<version>1.0</version>
 				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>junit</groupId>
-				<artifactId>junit</artifactId>
-				<version>3.8.1</version>
-				<scope>test</scope>
 			</dependency>
             <dependency>
                 <groupId>org.glassfish</groupId>
@@ -112,6 +112,12 @@
                 <version>3.0-Preview</version>
                 <scope>provided</scope>
             </dependency>
+            
+			<dependency>
+				<groupId>${groupId}</groupId>
+				<artifactId>database.api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
     <repositories>
@@ -125,8 +131,7 @@
         </repository>
     </repositories>
 	<modules>
-		<module>database-api</module>
-		<module>direct-oracle-access</module>
-        <module>httpHandler</module>
+        <module>http-handler</module>
+        <module>srv-security</module>
 	</modules>
 </project>
