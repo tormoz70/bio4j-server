@@ -118,6 +118,11 @@
 				<artifactId>database.api</artifactId>
 				<version>${project.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>${groupId}</groupId>
+				<artifactId>service.api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
     <repositories>
@@ -132,6 +137,7 @@
     </repositories>
 	<modules>
         <module>http-handler</module>
+        <module>srv-api</module>
         <module>srv-security</module>
 	</modules>
 </project>

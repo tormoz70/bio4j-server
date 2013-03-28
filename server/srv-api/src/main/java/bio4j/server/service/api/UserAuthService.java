@@ -1,4 +1,4 @@
-package bio4j.server.service.security;
+package bio4j.server.service.api;
 
 public interface UserAuthService
 {
