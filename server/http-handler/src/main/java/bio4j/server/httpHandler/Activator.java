@@ -1,5 +1,7 @@
 package bio4j.server.httpHandler;
 
+import javax.servlet.http.HttpServlet;
+
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
@@ -8,6 +10,8 @@ import org.osgi.framework.ServiceEvent;
 import org.osgi.framework.ServiceListener;
 import org.osgi.framework.ServiceReference;
 import org.osgi.framework.ServiceRegistration;
+import org.osgi.service.http.HttpContext;
+import org.osgi.service.http.HttpService;
 
 import bio4j.server.service.api.UserAuthService;
 
@@ -26,11 +30,29 @@ public class Activator implements BundleActivator {
         }
     }
 	
+	private LoginServlet loginServlet;
+	
 	public void start(BundleContext context) throws Exception {
-//		UserAuthServiceListener listener = new UserAuthServiceListener();
-//        String serviceFilter = "(objectclass=" + UserAuthService.class.getName() + ")";
-//        context.addServiceListener(listener, serviceFilter);
-//        fireEvent_REGISTERED(context, listener, serviceFilter);
+		
+//		ServiceReference sr  =  context.getServiceReference(HttpService.class.getName());
+//		System.out.println("bio4j.server.httpHandler.Activator - 1");
+//		if(sr != null) {
+//			System.out.println("bio4j.server.httpHandler.Activator - 2");
+//			HttpService httpService = (HttpService)context.getService(sr);
+//			if(httpService != null) {
+//				System.out.println("bio4j.server.httpHandler.Activator - 3");
+//				HttpContext httpContext = httpService.createDefaultHttpContext();
+//				this.loginServlet = new LoginServlet();
+//				this.loginServlet.setSrvName("FTW-Servlet");
+//				httpService.registerServlet("/login", this.loginServlet, null, httpContext);
+//				System.out.println("bio4j.server.httpHandler.Activator - 4");
+//			}
+//		}
+		
+		UserAuthServiceListener listener = new UserAuthServiceListener();
+		String serviceFilter = "(objectclass=" + UserAuthService.class.getName() + ")";
+		context.addServiceListener(listener, serviceFilter);
+		fireEvent_REGISTERED(context, listener, serviceFilter);
 	}
 
 	public void stop(BundleContext context) throws Exception {

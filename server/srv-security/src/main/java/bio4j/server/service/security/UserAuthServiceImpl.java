@@ -4,10 +4,10 @@ import bio4j.server.service.api.UserAuthService;
 
 public class UserAuthServiceImpl implements UserAuthService 
 {
-    public boolean login(String name, String password) {
-    	return true;
+    public String login(String name, String password) {
+    	return name + "/" + password;
     }
-    public boolean register(String name, String password) {
-    	return true;
+    public String register(String name, String password) {
+    	return null;
     }
 }

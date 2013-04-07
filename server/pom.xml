@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd" xmlns="http://maven.apache.org/POM/4.0.0">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>bio4j</groupId>
 	<artifactId>server</artifactId>
@@ -23,7 +25,7 @@
 							<!-- Read all OSGi configuration info from this optional file -->
 							<_include>-osgi.bundle</_include>
 							<!-- By default, we don't export anything -->
-							<Export-Package/>
+							<Export-Package />
 						</instructions>
 					</configuration>
 					<executions>
@@ -42,8 +44,8 @@
 						<archive>
 							<!-- add bundle plugin generated manifest to the jar -->
 							<manifestFile>
-                                ${project.build.outputDirectory}/META-INF/MANIFEST.MF
-                            </manifestFile>
+								${project.build.outputDirectory}/META-INF/MANIFEST.MF
+							</manifestFile>
 						</archive>
 					</configuration>
 				</plugin>
@@ -56,15 +58,14 @@
 						<archive>
 							<!-- add bundle plugin generated manifest to the war -->
 							<manifestFile>
-                                ${project.build.outputDirectory}/META-INF/MANIFEST.MF
-                            </manifestFile>
-							<!-- For some reason, adding Bundle-ClassPath in maven-bundle-plugin
-                            confuses that plugin and it generates wrong Import-Package, etc.
-                            So, we generate it here.
-                            -->
+								${project.build.outputDirectory}/META-INF/MANIFEST.MF
+							</manifestFile>
+							<!-- For some reason, adding Bundle-ClassPath in maven-bundle-plugin 
+								confuses that plugin and it generates wrong Import-Package, etc. So, we generate 
+								it here. -->
 							<manifestEntries>
 								<Bundle-ClassPath>WEB-INF/classes/
-                                </Bundle-ClassPath>
+								</Bundle-ClassPath>
 							</manifestEntries>
 						</archive>
 					</configuration>
@@ -100,19 +101,19 @@
 				<version>1.0</version>
 				<scope>provided</scope>
 			</dependency>
-            <dependency>
-                <groupId>org.glassfish</groupId>
-                <artifactId>javax.ejb</artifactId>
-                <version>3.0-Preview</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.glassfish</groupId>
-                <artifactId>javax.servlet</artifactId>
-                <version>3.0-Preview</version>
-                <scope>provided</scope>
-            </dependency>
-            
+			<dependency>
+				<groupId>org.glassfish</groupId>
+				<artifactId>javax.ejb</artifactId>
+				<version>3.0-Preview</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.glassfish</groupId>
+				<artifactId>javax.servlet</artifactId>
+				<version>3.0-Preview</version>
+				<scope>provided</scope>
+			</dependency>
+
 			<dependency>
 				<groupId>${groupId}</groupId>
 				<artifactId>database.api</artifactId>
@@ -125,19 +126,30 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-    <repositories>
-        <repository> <!-- Needed to access latest Java EE API from GlassFish project -->
-            <id>glassfish-repo-archive</id>
-            <name>Nexus repository collection for Glassfish</name>
-            <url>http://maven.glassfish.org/content/groups/glassfish</url>
-            <snapshots>
-                <updatePolicy>never</updatePolicy>
-            </snapshots>
-        </repository>
-    </repositories>
+	<repositories>
+		<repository> <!-- Needed to access latest Java EE API from GlassFish project -->
+			<id>glassfish-repo-archive</id>
+			<name>Nexus repository collection for Glassfish</name>
+			<url>http://maven.glassfish.org/content/groups/glassfish</url>
+			<snapshots>
+				<updatePolicy>never</updatePolicy>
+			</snapshots>
+		</repository>
+	</repositories>
 	<modules>
-        <module>http-handler</module>
-        <module>srv-api</module>
-        <module>srv-security</module>
+		<module>http-handler</module>
+		<module>srv-api</module>
+		<module>srv-security</module>
 	</modules>
+	<profiles>
+	     <profile>
+	       <id>dgf</id>
+	          <modules>
+				<module>http-handler</module>
+				<module>srv-api</module>
+				<module>srv-security</module>
+				<module>deployer</module>
+	          </modules> 
+	      </profile>
+	  </profiles>	
 </project>
