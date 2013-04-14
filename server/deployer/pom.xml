@@ -9,6 +9,9 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <artifactId>deployer</artifactId>
+    <description><![CDATA[
+    	Данный проект предназначен для развертывания системы на локальном сервере GF
+    ]]></description>
     <packaging>pom</packaging>
     <build>
         <plugins>
@@ -63,7 +66,7 @@
         </dependency>
         <dependency>
             <groupId>${groupId}</groupId>
-            <artifactId>httpHandler</artifactId>
+            <artifactId>service.httpHandler</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

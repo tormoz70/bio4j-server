@@ -137,18 +137,27 @@
 		</repository>
 	</repositories>
 	<modules>
-		<module>http-handler</module>
+		<module>model</module>
+		<module>srv-http</module>
 		<module>srv-api</module>
+        <module>srv-session</module>
 		<module>srv-security</module>
+        <module>srv-db</module>
+		<module>srv-inverter</module>
 	</modules>
 	<profiles>
 	     <profile>
 	       <id>dgf</id>
 	          <modules>
-				<module>http-handler</module>
-				<module>srv-api</module>
-				<module>srv-security</module>
-				<module>deployer</module>
+                <module>model</module>
+                <module>srv-http</module>
+                <module>srv-api</module>
+                <module>srv-session</module>
+                <module>srv-security</module>
+                <module>srv-db</module>
+                <module>srv-inverter</module>
+<!-- ************************************************ -->
+                <module>deployer</module>
 	          </modules> 
 	      </profile>
 	  </profiles>	

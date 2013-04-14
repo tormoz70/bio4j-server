@@ -9,6 +9,9 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <artifactId>service.security</artifactId>
+    <description><![CDATA[
+    	Реализация сервиса для аутентификации пользователей
+    ]]></description>
     <packaging>jar</packaging>
     <build>
         <finalName>${groupId}-server-srv-security</finalName>
