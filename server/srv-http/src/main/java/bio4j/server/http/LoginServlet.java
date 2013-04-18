@@ -1,4 +1,4 @@
-package bio4j.server.httpHandler;
+package bio4j.server.http;
 
 import java.io.PrintWriter;
 

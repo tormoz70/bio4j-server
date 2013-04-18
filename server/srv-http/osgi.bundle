@@ -1,2 +1,2 @@
-Bundle-Activator:bio4j.server.httpHandler.Activator
+Bundle-Activator:bio4j.server.http.Activator
 Web-ContextPath:/bio

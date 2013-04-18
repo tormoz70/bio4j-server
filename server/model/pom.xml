@@ -14,7 +14,7 @@
     ]]></description>
     <packaging>jar</packaging>
     <build>
-        <finalName>${groupId}-server-model</finalName>
+<!--         <finalName>${groupId}-server-model</finalName> -->
         <plugins>
             <plugin>
                 <groupId>org.apache.felix</groupId>

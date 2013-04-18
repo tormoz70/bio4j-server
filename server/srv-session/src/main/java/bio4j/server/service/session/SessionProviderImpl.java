@@ -1,8 +1,8 @@
-package bio4j.server.service.dbaccess;
+package bio4j.server.service.session;
 
-import bio4j.server.service.api.DatabaseProvider;
+import bio4j.server.service.api.SessionProvider;
 
-public class SessionProviderImpl implements DatabaseProvider 
+public class SessionProviderImpl implements SessionProvider 
 {
     public String login(String name, String password) {
     	return name + "/" + password;

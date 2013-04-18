@@ -30,20 +30,41 @@
                                 <!-- Our bundles which need to be deployed -->
                                 <artifactItem>
                                     <groupId>${groupId}</groupId>
-                                    <artifactId>service.api</artifactId>
+                                    <artifactId>model</artifactId>
                                     <version>${project.version}</version>
                                 </artifactItem>
-                                <artifactItem>
-                                    <groupId>${groupId}</groupId>
-                                    <artifactId>service.security</artifactId>
-                                    <version>${project.version}</version>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>${groupId}</groupId>
-                                    <artifactId>httpHandler</artifactId>
-                                    <version>${project.version}</version>
-                                    <type>war</type>
-                                </artifactItem>
+
+						        <artifactItem>
+						            <groupId>${groupId}</groupId>
+						            <artifactId>service.api</artifactId>
+						            <version>${project.version}</version>
+						        </artifactItem>
+						        <artifactItem>
+						            <groupId>${groupId}</groupId>
+						            <artifactId>service.dbaccess</artifactId>
+						            <version>${project.version}</version>
+						        </artifactItem>
+						        <artifactItem>
+						            <groupId>${groupId}</groupId>
+						            <artifactId>service.http</artifactId>
+						            <version>${project.version}</version>
+									<type>war</type>
+						        </artifactItem>
+						        <artifactItem>
+						            <groupId>${groupId}</groupId>
+						            <artifactId>service.inverter</artifactId>
+						            <version>${project.version}</version>
+						        </artifactItem>
+						        <artifactItem>
+						            <groupId>${groupId}</groupId>
+						            <artifactId>service.security</artifactId>
+						            <version>${project.version}</version>
+						        </artifactItem>
+						        <artifactItem>
+						            <groupId>${groupId}</groupId>
+						            <artifactId>service.session</artifactId>
+						            <version>${project.version}</version>
+						        </artifactItem>
                             </artifactItems>
                             <outputDirectory>C:\glassfish3\glassfish\domains\domain1\autodeploy\bundles\</outputDirectory>
                             <overWriteSnapshots>true</overWriteSnapshots>
@@ -56,7 +77,27 @@
     <dependencies>
         <dependency>
             <groupId>${groupId}</groupId>
+            <artifactId>model</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${groupId}</groupId>
             <artifactId>service.api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>service.dbaccess</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>service.http</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>service.inverter</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
@@ -66,7 +107,7 @@
         </dependency>
         <dependency>
             <groupId>${groupId}</groupId>
-            <artifactId>service.httpHandler</artifactId>
+            <artifactId>service.session</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

@@ -16,12 +16,12 @@
     ]]></description>
     <packaging>jar</packaging>
     <build>
-        <finalName>${groupId}-server-srv-api</finalName>
+<!--         <finalName>${groupId}-server-srv-api</finalName> -->
         <plugins>
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <!-- Read all instructions from osgi.bundle -->
+<!--                 Read all instructions from osgi.bundle -->
             </plugin>
         </plugins>
     </build>

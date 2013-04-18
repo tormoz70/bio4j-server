@@ -14,7 +14,7 @@
     ]]></description>
     <packaging>jar</packaging>
     <build>
-        <finalName>${groupId}-server-srv-session</finalName>
+<!--         <finalName>${groupId}-server-srv-session</finalName> -->
         <plugins>
             <plugin>
                 <groupId>org.apache.felix</groupId>
