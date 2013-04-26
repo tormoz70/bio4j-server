@@ -14,7 +14,7 @@
     ]]></description>
     <packaging>jar</packaging>
     <build>
-<!--         <finalName>${groupId}-server-srv-dbaccess</finalName> -->
+<!--         <finalName>${project.groupId}-server-srv-dbaccess</finalName> -->
         <plugins>
             <plugin>
                 <groupId>org.apache.felix</groupId>
@@ -32,7 +32,7 @@
             <artifactId>osgi_R4_compendium</artifactId>
         </dependency>
 		<dependency>
-			<groupId>${groupId}</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>service.api</artifactId>
 		</dependency>
     </dependencies>

@@ -3,37 +3,51 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
 	xmlns="http://maven.apache.org/POM/4.0.0">
 	<modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>bio4j</groupId>
-        <artifactId>server</artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
-    <artifactId>service.session</artifactId>
-    <description><![CDATA[
+	<parent>
+		<groupId>bio4j</groupId>
+		<artifactId>server</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>service.session</artifactId>
+	<description><![CDATA[
     	Реализация сервиса для управления сессиями клиентов
     ]]></description>
-    <packaging>jar</packaging>
-    <build>
-<!--         <finalName>${groupId}-server-srv-session</finalName> -->
-        <plugins>
-            <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-bundle-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-    <dependencies>
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>osgi_R4_core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>osgi_R4_compendium</artifactId>
-        </dependency>
+	<packaging>jar</packaging>
+	<build>
+		<!-- <finalName>${project.groupId}-server-srv-session</finalName> -->
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<!-- <configuration> <instructions> <Embed-Dependency>log4j;scope=compile|runtime</Embed-Dependency> 
+					<Embed-Transitive>true</Embed-Transitive> <Import-Package>!*log4j,*</Import-Package> 
+					<Embed-Directory>lib</Embed-Directory> </instructions> </configuration> -->
+			</plugin>
+			<!-- <plugin> <artifactId>maven-dependency-plugin</artifactId> <executions> 
+				<execution> <id>copy-dependencies</id> <phase>validate</phase> <goals> <goal>copy</goal> 
+				</goals> <configuration> <artifactItems> <artifactItem> <groupId>log4j</groupId> 
+				<artifactId>log4j</artifactId> </artifactItem> </artifactItems> <outputDirectory>target\classes\lib</outputDirectory> 
+				<overWriteSnapshots>true</overWriteSnapshots> </configuration> </execution> 
+				</executions> </plugin> -->
+		</plugins>
+	</build>
+	<dependencies>
 		<dependency>
-			<groupId>${groupId}</groupId>
+			<groupId>org.osgi</groupId>
+			<artifactId>osgi_R4_core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>osgi_R4_compendium</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<type>bundle</type>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>service.api</artifactId>
 		</dependency>
-    </dependencies>
+	</dependencies>
 </project>

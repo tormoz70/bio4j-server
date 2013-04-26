@@ -7,10 +7,7 @@ import org.osgi.framework.ServiceEvent;
 import org.osgi.framework.ServiceListener;
 import org.osgi.framework.ServiceReference;
 
-import bio4j.server.service.api.UserAuthService;
-
 public class Activator implements BundleActivator {
-
 	private void fireEvent_REGISTERED(BundleContext context, ServiceListener serviceListiner, String filter) throws InvalidSyntaxException {
 		ServiceReference[] lst = context.getServiceReferences(null, filter);
 		for (int i = 0; lst != null && i < lst.length; i++) {
@@ -20,7 +17,6 @@ public class Activator implements BundleActivator {
 	}
 
 	public void start(BundleContext context) throws Exception {
-
 		AnServiceListener listener = new AnServiceListener();
 		String serviceFilter = "(objectclass=bio4j.server.service.*)";
 		context.addServiceListener(listener, serviceFilter);

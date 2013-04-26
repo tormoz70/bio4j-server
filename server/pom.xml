@@ -23,7 +23,7 @@
 						</supportedProjectTypes>
 						<instructions>
 							<!-- Read all OSGi configuration info from this optional file -->
-							<_include>-osgi.bundle</_include>
+							<!-- <_include>-osgi.bundle</_include> -->
 							<!-- By default, we don't export anything -->
 							<Export-Package />
 						</instructions>
@@ -80,6 +80,8 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
+		<!-- <resources> <resource> <directory>..\resources</directory> </resource> 
+			</resources> -->
 	</build>
 	<dependencyManagement>
 		<dependencies>
@@ -113,19 +115,27 @@
 				<version>3.0-Preview</version>
 				<scope>provided</scope>
 			</dependency>
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<type>bundle</type>
+				<version>1.2.17</version>
+				<scope>provided</scope>
+			</dependency>
 
 			<dependency>
-				<groupId>${groupId}</groupId>
+				<groupId>${project.groupId}</groupId>
 				<artifactId>database.api</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>${groupId}</groupId>
+				<groupId>${project.groupId}</groupId>
 				<artifactId>service.api</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+
 	<repositories>
 		<repository> <!-- Needed to access latest Java EE API from GlassFish project -->
 			<id>glassfish-repo-archive</id>
@@ -139,26 +149,26 @@
 	<modules>
 		<module>model</module>
 		<module>srv-api</module>
-        <module>srv-session</module>
+		<module>srv-session</module>
 		<module>srv-security</module>
-        <module>srv-db</module>
+		<module>srv-db</module>
 		<module>srv-inverter</module>
 		<module>srv-http</module>
 	</modules>
 	<profiles>
-	     <profile>
-	       <id>dgf</id>
-	          <modules>
-                <module>model</module>
-                <module>srv-api</module>
-                <module>srv-session</module>
-                <module>srv-security</module>
-                <module>srv-db</module>
-                <module>srv-inverter</module>
-                <module>srv-http</module>
-<!-- ************************************************ -->
-                <module>deployer</module>
-	          </modules> 
-	      </profile>
-	  </profiles>	
+		<profile>
+			<id>dgf</id>
+			<modules>
+				<module>model</module>
+				<module>srv-api</module>
+				<module>srv-session</module>
+				<module>srv-security</module>
+				<module>srv-db</module>
+				<module>srv-inverter</module>
+				<module>srv-http</module>
+				<!-- ************************************************ -->
+				<module>deployer</module>
+			</modules>
+		</profile>
+	</profiles>
 </project>

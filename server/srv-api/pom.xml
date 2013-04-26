@@ -16,7 +16,7 @@
     ]]></description>
     <packaging>jar</packaging>
     <build>
-<!--         <finalName>${groupId}-server-srv-api</finalName> -->
+<!--         <finalName>${project.groupId}-server-srv-api</finalName> -->
         <plugins>
             <plugin>
                 <groupId>org.apache.felix</groupId>
