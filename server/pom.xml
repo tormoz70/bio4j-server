@@ -23,7 +23,7 @@
 						</supportedProjectTypes>
 						<instructions>
 							<!-- Read all OSGi configuration info from this optional file -->
-							<!-- <_include>-osgi.bundle</_include> -->
+							<_include>-osgi.bundle</_include>
 							<!-- By default, we don't export anything -->
 							<Export-Package />
 						</instructions>
@@ -132,6 +132,7 @@
 				<groupId>${project.groupId}</groupId>
 				<artifactId>service.api</artifactId>
 				<version>${project.version}</version>
+				<scope>provided</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

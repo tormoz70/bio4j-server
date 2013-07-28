@@ -10,7 +10,7 @@
     </layout>
   </appender>    
   <appender name="file" class="org.apache.log4j.RollingFileAppender">
-    <param name="File" value="c:\bio4j.log"/>
+    <param name="File" value="log4j.log"/>
     <param name="MaxBackupIndex" value="5"/>
     <layout class="org.apache.log4j.PatternLayout">
       <param name="ConversionPattern" value="%d %p [%t] %c - %m%n"/>
