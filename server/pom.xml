@@ -64,8 +64,7 @@
 								confuses that plugin and it generates wrong Import-Package, etc. So, we generate 
 								it here. -->
 							<manifestEntries>
-								<Bundle-ClassPath>WEB-INF/classes/
-								</Bundle-ClassPath>
+								<Bundle-ClassPath>WEB-INF/classes/</Bundle-ClassPath>
 							</manifestEntries>
 						</archive>
 					</configuration>
@@ -125,12 +124,24 @@
 
 			<dependency>
 				<groupId>${project.groupId}</groupId>
+				<artifactId>service.api</artifactId>
+				<version>${project.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>service.base</artifactId>
+				<version>${project.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
 				<artifactId>database.api</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
-				<artifactId>service.api</artifactId>
+				<artifactId>model</artifactId>
 				<version>${project.version}</version>
 				<scope>provided</scope>
 			</dependency>
@@ -150,11 +161,14 @@
 	<modules>
 		<module>model</module>
 		<module>srv-api</module>
+        <module>srv-base</module>
+		<module>srv-root</module>
+        <module>srv-biosrv</module>
+        <module>srv-handlers</module>
 		<module>srv-session</module>
 		<module>srv-security</module>
 		<module>srv-db</module>
 		<module>srv-inverter</module>
-		<module>srv-http</module>
 	</modules>
 	<profiles>
 		<profile>
@@ -162,11 +176,14 @@
 			<modules>
 				<module>model</module>
 				<module>srv-api</module>
+                <module>srv-base</module>
+				<module>srv-root</module>
+				<module>srv-biosrv</module>
+				<module>srv-handlers</module>
 				<module>srv-session</module>
 				<module>srv-security</module>
 				<module>srv-db</module>
 				<module>srv-inverter</module>
-				<module>srv-http</module>
 				<!-- ************************************************ -->
 				<module>deployer</module>
 			</modules>

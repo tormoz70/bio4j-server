@@ -8,9 +8,9 @@
         <artifactId>server</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>service.dbaccess</artifactId>
+    <artifactId>service.base</artifactId>
     <description><![CDATA[
-    	Реализация сервиса для доступа к БД
+    	Базовые типы
     ]]></description>
     <packaging>jar</packaging>
     <build>
@@ -21,22 +21,31 @@
             </plugin>
         </plugins>
     </build>
-    <dependencies>
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>osgi_R4_core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>osgi_R4_compendium</artifactId>
-        </dependency>
+	<dependencies>
+		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.servlet</artifactId>
+		</dependency>
+	    <dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>osgi_R4_core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>osgi_R4_compendium</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<type>bundle</type>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>model</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>service.api</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>service.base</artifactId>
-		</dependency>
-    </dependencies>
+	</dependencies>
 </project>

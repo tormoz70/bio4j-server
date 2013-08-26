@@ -41,14 +41,32 @@
 								</artifactItem>
 								<artifactItem>
 									<groupId>${project.groupId}</groupId>
-									<artifactId>service.dbaccess</artifactId>
+									<artifactId>service.base</artifactId>
 									<version>${project.version}</version>
+								</artifactItem>
+								
+								<artifactItem>
+									<groupId>${project.groupId}</groupId>
+									<artifactId>service.root</artifactId>
+									<version>${project.version}</version>
+								</artifactItem>
+																
+								<artifactItem>
+									<groupId>${project.groupId}</groupId>
+									<artifactId>service.biosrv</artifactId>
+									<version>${project.version}</version>
+									<type>war</type>
 								</artifactItem>
 								<artifactItem>
 									<groupId>${project.groupId}</groupId>
-									<artifactId>service.http</artifactId>
+									<artifactId>service.handlers</artifactId>
 									<version>${project.version}</version>
 									<type>war</type>
+								</artifactItem>
+								<artifactItem>
+									<groupId>${project.groupId}</groupId>
+									<artifactId>service.dbaccess</artifactId>
+									<version>${project.version}</version>
 								</artifactItem>
 								<artifactItem>
 									<groupId>${project.groupId}</groupId>
@@ -87,12 +105,22 @@
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
+			<artifactId>service.base</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>service.dbaccess</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>service.http</artifactId>
+			<artifactId>service.biosrv</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>service.handlers</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>

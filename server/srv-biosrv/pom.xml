@@ -8,14 +8,16 @@
 		<artifactId>server</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>service.session</artifactId>
+	<artifactId>service.biosrv</artifactId>
 	<description><![CDATA[
-    	Реализация сервиса для управления сессиями клиентов
+    	Данный сервис реализует доступность к серверу BioSrv по протоколу Bio на базе Http
     ]]></description>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<build>
-		<!-- <finalName>${project.groupId}-server-srv-session</finalName> -->
 		<plugins>
+			<plugin> <!-- Need to use this plugin to build war files -->
+				<artifactId>maven-war-plugin</artifactId>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
@@ -27,7 +29,7 @@
 			<groupId>org.glassfish</groupId>
 			<artifactId>javax.servlet</artifactId>
 		</dependency>
-	    <dependency>
+		<dependency>
 			<groupId>org.osgi</groupId>
 			<artifactId>osgi_R4_core</artifactId>
 		</dependency>
@@ -35,11 +37,7 @@
 			<groupId>org.osgi</groupId>
 			<artifactId>osgi_R4_compendium</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<type>bundle</type>
-		</dependency>
+
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>service.api</artifactId>
