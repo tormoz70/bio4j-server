@@ -17,10 +17,16 @@ import bio4j.server.service.api.BioService;
 import bio4j.server.service.base.BioRequestType;
 
 
+@SuppressWarnings("serial")
 @WebServlet(urlPatterns = "/srv")
 public class BioSrvServlet extends HttpServlet {
 
-	private static final long serialVersionUID = -868536249619464021L;
+    /// <summary>
+    /// для get запросов из сторонних приложений
+    /// </summary>
+    private final String csRequestTypeParamName = "rqtp";
+    private final String csBioCodeParamName = "rqbc";
+    private final String csQParamName = "rqpckt";
 	
 	// Данный сервлет обрабатывает запросы Bio
 	public void service(HttpServletRequest req, HttpServletResponse resp)
