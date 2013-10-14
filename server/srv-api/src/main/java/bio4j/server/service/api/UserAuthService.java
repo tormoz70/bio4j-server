@@ -1,7 +1,8 @@
 package bio4j.server.service.api;
 
+import bio4j.server.model.User;
+
 public interface UserAuthService
 {
-    String login(String name, String password);
-    String register(String name, String password);
+	User login(String namepwdPair);
 }
