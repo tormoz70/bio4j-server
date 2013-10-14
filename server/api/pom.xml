@@ -8,13 +8,14 @@
         <artifactId>server</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>service.security</artifactId>
+    <artifactId>api</artifactId>
     <description><![CDATA[
-    	Реализация сервиса для аутентификации пользователей
+    	Описание интерфесов, с помощью которых модули могут взаимодействовать между собой
+    		UserAuthService 	- Интерфейс службы аутентификации
+    		DatabaseProvider 	- Интерфейс службы, которая предоставляет API для доступа к БД 
     ]]></description>
     <packaging>jar</packaging>
     <build>
-<!--         <finalName>${project.groupId}-server-srv-security</finalName> -->
         <plugins>
             <plugin>
                 <groupId>org.apache.felix</groupId>
@@ -22,22 +23,14 @@
             </plugin>
         </plugins>
     </build>
-    <dependencies>
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>osgi_R4_core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>osgi_R4_compendium</artifactId>
-        </dependency>
+	<dependencies>
 		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>api</artifactId>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.servlet</artifactId>
 		</dependency>
-		<dependency>
+	    <dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>model</artifactId>
 		</dependency>
-		</dependencies>
+	</dependencies>
 </project>

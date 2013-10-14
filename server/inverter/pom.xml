@@ -8,13 +8,13 @@
         <artifactId>server</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>service.security</artifactId>
+    <artifactId>inverter</artifactId>
     <description><![CDATA[
-    	Реализация сервиса для аутентификации пользователей
+    	Реализация модуля сериализации/десериализации запросов/ответов
     ]]></description>
     <packaging>jar</packaging>
     <build>
-<!--         <finalName>${project.groupId}-server-srv-security</finalName> -->
+<!--         <finalName>${project.groupId}-server-srv-inverter</finalName> -->
         <plugins>
             <plugin>
                 <groupId>org.apache.felix</groupId>
@@ -35,9 +35,5 @@
 			<groupId>${project.groupId}</groupId>
 			<artifactId>api</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>model</artifactId>
-		</dependency>
-		</dependencies>
+    </dependencies>
 </project>

@@ -36,12 +36,23 @@
 
 								<artifactItem>
 									<groupId>${project.groupId}</groupId>
-									<artifactId>service.api</artifactId>
+									<artifactId>api</artifactId>
 									<version>${project.version}</version>
 								</artifactItem>
 								<artifactItem>
 									<groupId>${project.groupId}</groupId>
-									<artifactId>service.base</artifactId>
+									<artifactId>common</artifactId>
+									<version>${project.version}</version>
+								</artifactItem>
+								<artifactItem>
+									<groupId>${project.groupId}</groupId>
+									<artifactId>handlers</artifactId>
+									<version>${project.version}</version>
+									<type>war</type>
+								</artifactItem>
+								<artifactItem>
+									<groupId>${project.groupId}</groupId>
+									<artifactId>inverter</artifactId>
 									<version>${project.version}</version>
 								</artifactItem>
 								
@@ -50,27 +61,15 @@
 									<artifactId>service.root</artifactId>
 									<version>${project.version}</version>
 								</artifactItem>
-																
 								<artifactItem>
 									<groupId>${project.groupId}</groupId>
-									<artifactId>service.biosrv</artifactId>
+									<artifactId>service.srvc</artifactId>
 									<version>${project.version}</version>
 									<type>war</type>
 								</artifactItem>
 								<artifactItem>
 									<groupId>${project.groupId}</groupId>
-									<artifactId>service.handlers</artifactId>
-									<version>${project.version}</version>
-									<type>war</type>
-								</artifactItem>
-								<artifactItem>
-									<groupId>${project.groupId}</groupId>
-									<artifactId>service.dbaccess</artifactId>
-									<version>${project.version}</version>
-								</artifactItem>
-								<artifactItem>
-									<groupId>${project.groupId}</groupId>
-									<artifactId>service.inverter</artifactId>
+									<artifactId>service.dbsession.provider</artifactId>
 									<version>${project.version}</version>
 								</artifactItem>
 								<artifactItem>
@@ -80,7 +79,7 @@
 								</artifactItem>
 								<artifactItem>
 									<groupId>${project.groupId}</groupId>
-									<artifactId>service.session</artifactId>
+									<artifactId>service.httpsession.provider</artifactId>
 									<version>${project.version}</version>
 								</artifactItem>
 							</artifactItems>
@@ -100,32 +99,32 @@
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>service.api</artifactId>
+			<artifactId>api</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>service.base</artifactId>
+			<artifactId>common</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>service.dbaccess</artifactId>
+			<artifactId>handlers</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>service.biosrv</artifactId>
+			<artifactId>inverter</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>service.handlers</artifactId>
+			<artifactId>service.dbsession.provider</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>service.inverter</artifactId>
+			<artifactId>service.srvc</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
@@ -135,7 +134,7 @@
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>service.session</artifactId>
+			<artifactId>service.httpsession.provider</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>

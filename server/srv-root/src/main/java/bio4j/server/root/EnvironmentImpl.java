@@ -1,8 +1,8 @@
 package bio4j.server.root;
 
-import bio4j.server.service.api.BioService;
-import bio4j.server.service.api.BioEnvironment;
-import bio4j.server.service.api.SessionProvider;
+import bio4j.server.api.BioEnvironment;
+import bio4j.server.api.services.BioService;
+import bio4j.server.api.services.SessionProvider;
 
 public class EnvironmentImpl implements BioEnvironment {
 

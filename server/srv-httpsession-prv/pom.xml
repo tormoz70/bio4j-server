@@ -8,13 +8,13 @@
 		<artifactId>server</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>service.root</artifactId>
+	<artifactId>service.httpsession.provider</artifactId>
 	<description><![CDATA[
-    	Данный сервис является корневым и должен инициализироваться первым.
-        Инициализирует log4j, Environment (Окружение - одиночка, который содержит ссылки на все плагины (по имени) и инжектит ссылку на себя во все плагины)
+    	Реализация сервиса для управления сессиями клиентов
     ]]></description>
 	<packaging>jar</packaging>
 	<build>
+		<!-- <finalName>${project.groupId}-server-srv-session</finalName> -->
 		<plugins>
 			<plugin>
 				<groupId>org.apache.felix</groupId>
@@ -24,6 +24,10 @@
 	</build>
 	<dependencies>
 		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.servlet</artifactId>
+		</dependency>
+	    <dependency>
 			<groupId>org.osgi</groupId>
 			<artifactId>osgi_R4_core</artifactId>
 		</dependency>
@@ -39,6 +43,10 @@
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>common</artifactId>
 		</dependency>
 	</dependencies>
 </project>

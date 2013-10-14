@@ -8,10 +8,9 @@
 		<artifactId>server</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>service.root</artifactId>
+	<artifactId>handlers</artifactId>
 	<description><![CDATA[
-    	Данный сервис является корневым и должен инициализироваться первым.
-        Инициализирует log4j, Environment (Окружение - одиночка, который содержит ссылки на все плагины (по имени) и инжектит ссылку на себя во все плагины)
+    	Реализация сервиса для управления обработчиками запросов протокола Bio
     ]]></description>
 	<packaging>jar</packaging>
 	<build>
@@ -24,6 +23,10 @@
 	</build>
 	<dependencies>
 		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.servlet</artifactId>
+		</dependency>
+	    <dependency>
 			<groupId>org.osgi</groupId>
 			<artifactId>osgi_R4_core</artifactId>
 		</dependency>
@@ -39,6 +42,10 @@
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>common</artifactId>
 		</dependency>
 	</dependencies>
 </project>

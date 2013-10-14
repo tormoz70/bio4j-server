@@ -9,9 +9,8 @@ import org.osgi.framework.ServiceEvent;
 import org.osgi.framework.ServiceListener;
 import org.osgi.framework.ServiceReference;
 
-import bio4j.server.service.api.BioService;
-import bio4j.server.service.api.BioEnvironment;
-import bio4j.server.service.api.SessionProvider;
+import bio4j.server.api.BioEnvironment;
+import bio4j.server.api.services.BioService;
 
 public class Activator implements BundleActivator {
 	public static Logger LOG = Logger.getLogger(Activator.class);
@@ -34,7 +33,7 @@ public class Activator implements BundleActivator {
 		LOG.debug(BioEnvironment.class+" - inited.");
 		
 		BioServiceListener listener = new BioServiceListener(context);
-		String serviceFilter = "(objectclass=bio4j.server.service.*)";
+		String serviceFilter = "(objectclass=bio4j.server.api.services.*)";
 		context.addServiceListener(listener, serviceFilter);
 		LOG.debug(BioServiceListener.class+" added as serviceFilter: " + serviceFilter);
 		fireEvent_REGISTERED(context, listener, serviceFilter);

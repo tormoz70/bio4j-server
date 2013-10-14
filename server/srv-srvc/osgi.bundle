@@ -1,0 +1,2 @@
+Bundle-Activator:bio4j.server.service.srvc.Activator
+Web-ContextPath:/bio
