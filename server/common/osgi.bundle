@@ -1,1 +1,1 @@
--exportcontents: bio4j.server.common;bio4j.server.common.exceptions
+-exportcontents: bio4j.server.common;bio4j.server.common.exceptions;bio4j.common.utils

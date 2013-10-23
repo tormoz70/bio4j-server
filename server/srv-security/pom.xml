@@ -8,7 +8,7 @@
         <artifactId>server</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>service.security</artifactId>
+    <artifactId>${project.groupId}.server.service.security</artifactId>
     <description><![CDATA[
     	Реализация сервиса для аутентификации пользователей
     ]]></description>
@@ -33,11 +33,11 @@
         </dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>api</artifactId>
+			<artifactId>${project.groupId}.server.api</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>model</artifactId>
+			<artifactId>${project.groupId}.server.model</artifactId>
 		</dependency>
 		</dependencies>
 </project>

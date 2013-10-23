@@ -2,7 +2,9 @@ package bio4j.server.root;
 
 import bio4j.server.api.BioEnvironment;
 import bio4j.server.api.services.BioService;
+import bio4j.server.api.services.DatabaseProvider;
 import bio4j.server.api.services.SessionProvider;
+import bio4j.server.api.services.UserAuthService;
 
 public class EnvironmentImpl implements BioEnvironment {
 
@@ -17,12 +19,6 @@ public class EnvironmentImpl implements BioEnvironment {
 		return "Bio4j";
 	}
 
-	private SessionProvider sessionProvider;
-	@Override
-	public SessionProvider getSessionProvider() {
-		return this.sessionProvider;
-	}
-
 	@Override
 	public void init() {
 		// TODO Auto-generated method stub
@@ -33,7 +29,29 @@ public class EnvironmentImpl implements BioEnvironment {
 	public void registerService(BioService service) {
 		if(service instanceof SessionProvider)
 			this.sessionProvider = (SessionProvider)service;
+		if(service instanceof UserAuthService)
+			this.userAuthService = (UserAuthService)service;
+		if(service instanceof DatabaseProvider)
+			this.databaseProvider = (DatabaseProvider)service;
 	}
 
+
+	private SessionProvider sessionProvider;
+	@Override
+	public SessionProvider getSessionProvider() {
+		return this.sessionProvider;
+	}
+
+	private UserAuthService userAuthService;
+	@Override
+	public UserAuthService getUserAuthService() {
+		return this.userAuthService;
+	}
+	
+	private DatabaseProvider databaseProvider;
+	@Override
+	public DatabaseProvider getDatabaseProvider() {
+		return this.databaseProvider;
+	}
 	
 }

@@ -9,7 +9,7 @@ import org.osgi.framework.ServiceRegistration;
 
 import bio4j.server.api.services.BioService;
 
-public class BioServiceActivatorBase<T extends BioServiceBase> implements BundleActivator {
+public class BioServiceActivatorBase<T extends BioService> implements BundleActivator {
 	public static Logger LOG;
 	
 	private ServiceRegistration serviceRegistration;
@@ -19,11 +19,11 @@ public class BioServiceActivatorBase<T extends BioServiceBase> implements Bundle
 		this.serviceClass = (Class<?>)((ParameterizedType)this.getClass().
 			       getGenericSuperclass()).getActualTypeArguments()[0];
 		LOG = Logger.getLogger(this.serviceClass);
-		BioServiceBase newService = (BioServiceBase)this.serviceClass.newInstance();
+		BioService newService = (BioService)this.serviceClass.newInstance();
 		Class<?>[] intfs = newService.getClass().getInterfaces();
 		for (Class<?> intf : intfs) 
 			if(intf != BioService.class){
-				// регистрируем первый попавшийся интерфейс не BioService 
+				// регистрируем первый попавшийся интерфейс не BioServiceBase 
 				this.serviceRegistration = context.registerService(intf.getName(), newService, null);
 				LOG.debug("Service ["+this.serviceClass.getName()+"] - registred as "+intf.getName());
 				break;

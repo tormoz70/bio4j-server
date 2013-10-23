@@ -8,7 +8,7 @@
 		<artifactId>server</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>service.root</artifactId>
+	<artifactId>${project.groupId}.server.service.root</artifactId>
 	<description><![CDATA[
     	Данный сервис является корневым и должен инициализироваться первым.
         Инициализирует log4j, Environment (Окружение - одиночка, который содержит ссылки на все плагины (по имени) и инжектит ссылку на себя во все плагины)
@@ -38,7 +38,7 @@
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>api</artifactId>
+			<artifactId>${project.groupId}.server.api</artifactId>
 		</dependency>
 	</dependencies>
 </project>

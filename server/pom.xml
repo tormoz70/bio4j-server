@@ -121,27 +121,60 @@
 				<version>1.2.17</version>
 				<scope>provided</scope>
 			</dependency>
-
 			<dependency>
 				<groupId>${project.groupId}</groupId>
-				<artifactId>api</artifactId>
+				<artifactId>flexjson</artifactId>
+				<version>1.2.1</version>
+				<scope>provided</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>${project.groupId}.common.utils</artifactId>
 				<version>${project.version}</version>
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
-				<artifactId>common</artifactId>
+				<artifactId>${project.groupId}.database.api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>${groupId}.common.types</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>${groupId}.database.api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>${groupId}.direct.oracle.access</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>${groupId}.transport.packets</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+												
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>${project.groupId}.server.api</artifactId>
 				<version>${project.version}</version>
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
-				<artifactId>database.api</artifactId>
+				<artifactId>${project.groupId}.server.common</artifactId>
 				<version>${project.version}</version>
+				<scope>provided</scope>
 			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
-				<artifactId>model</artifactId>
+				<artifactId>${project.groupId}.server.model</artifactId>
 				<version>${project.version}</version>
 				<scope>provided</scope>
 			</dependency>
@@ -162,8 +195,7 @@
 		<module>model</module>
 		<module>api</module>
         <module>common</module>
-		<module>inverter</module>
-        <module>handlers</module>
+        <module>handlers-container-bio</module>
 		<module>srv-root</module>
         <module>srv-srvc</module>
 		<module>srv-security</module>
@@ -176,11 +208,10 @@
 			<modules>
 				<module>model</module>
 				<module>api</module>
-                <module>common</module>
-				<module>inverter</module>
-				<module>handlers</module>
+		        <module>common</module>
+		        <module>handlers-container-bio</module>
 				<module>srv-root</module>
-				<module>srv-srvc</module>
+		        <module>srv-srvc</module>
 				<module>srv-security</module>
 				<module>srv-dbsession-prv</module>
 				<module>srv-httpsession-prv</module>

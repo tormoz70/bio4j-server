@@ -8,9 +8,9 @@
 		<artifactId>server</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>handlers</artifactId>
+	<artifactId>${project.groupId}.server.handlers.container.bio</artifactId>
 	<description><![CDATA[
-    	Реализация сервиса для управления обработчиками запросов протокола Bio
+    	Контейнер обработчиков запросов протокола Bio
     ]]></description>
 	<packaging>jar</packaging>
 	<build>
@@ -18,6 +18,15 @@
 			<plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
+				<configuration>
+                    <instructions>
+                        <Embed-Transitive>true</Embed-Transitive>
+                        <!-- <Embed-Dependency>bio4j.common.utils</Embed-Dependency> -->
+                        <Embed-Dependency>bio4j.common.utils;scope=runtime|compile;optional=false;inline=true</Embed-Dependency> 
+                        <Import-Package>*</Import-Package>
+                        <!-- <Export-Package>bio4j.common.utils</Export-Package> -->
+                    </instructions>
+                </configuration>                
 			</plugin>
 		</plugins>
 	</build>
@@ -41,11 +50,16 @@
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>api</artifactId>
+			<artifactId>${project.groupId}.server.api</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>common</artifactId>
+			<artifactId>${project.groupId}.server.common</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>${project.groupId}.common.utils</artifactId>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 </project>

@@ -8,7 +8,7 @@
 		<artifactId>server</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>service.srvc</artifactId>
+	<artifactId>${project.groupId}.server.service.srvc</artifactId>
 	<description><![CDATA[
     	Данный сервис реализует доступность к серверу BioSrv по протоколу Bio на базе Http
     ]]></description>
@@ -45,11 +45,11 @@
 		
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>api</artifactId>
+			<artifactId>${project.groupId}.server.api</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>common</artifactId>
+			<artifactId>${project.groupId}.server.common</artifactId>
 		</dependency>
 	</dependencies>
 </project>
