@@ -112,7 +112,7 @@
 									<type>war</type>
 								</artifactItem>
 							</artifactItems>
-							<outputDirectory>C:\glassfish3\glassfish\domains\domain1\autodeploy\bundles\</outputDirectory>
+							<outputDirectory>C:\glassfish4\glassfish\domains\domain1\autodeploy\bundles\</outputDirectory>
 							<overWriteSnapshots>true</overWriteSnapshots>
 						</configuration>
 					</execution>
