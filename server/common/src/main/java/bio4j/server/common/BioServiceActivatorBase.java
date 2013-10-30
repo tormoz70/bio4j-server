@@ -2,10 +2,11 @@ package bio4j.server.common;
 
 import java.lang.reflect.ParameterizedType;
 
-import org.apache.log4j.Logger;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import bio4j.server.api.services.BioService;
 
@@ -18,7 +19,7 @@ public class BioServiceActivatorBase<T extends BioService> implements BundleActi
 	public void start(BundleContext context) throws Exception {
 		this.serviceClass = (Class<?>)((ParameterizedType)this.getClass().
 			       getGenericSuperclass()).getActualTypeArguments()[0];
-		LOG = Logger.getLogger(this.serviceClass);
+		LOG = LoggerFactory.getLogger(this.serviceClass);
 		BioService newService = (BioService)this.serviceClass.newInstance();
 		Class<?>[] intfs = newService.getClass().getInterfaces();
 		for (Class<?> intf : intfs) 

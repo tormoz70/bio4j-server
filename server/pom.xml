@@ -82,49 +82,94 @@
 		<!-- <resources> <resource> <directory>..\resources</directory> </resource> 
 			</resources> -->
 	</build>
+	<properties>
+		<testng_version>6.7</testng_version>
+		<osgi_R4_version>1.0</osgi_R4_version>
+		<javax_servlet_version>3.0-Preview</javax_servlet_version>
+		<log4j_version>1.2.17</log4j_version>
+		<slf4j_version>1.7.5</slf4j_version>
+		<xstream_version>1.4.4_2</xstream_version>
+		<flexjson_version>1.2.1</flexjson_version>
+		<dom4j_version>1.6.1_4</dom4j_version>
+	</properties>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>org.testng</groupId>
 				<artifactId>testng</artifactId>
-				<version>6.7</version>
+				<version>${testng_version}</version>
 				<scope>test</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.osgi</groupId>
 				<artifactId>osgi_R4_core</artifactId>
-				<version>1.0</version>
+				<version>${osgi_R4_version}</version>
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.osgi</groupId>
 				<artifactId>osgi_R4_compendium</artifactId>
-				<version>1.0</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.glassfish</groupId>
-				<artifactId>javax.ejb</artifactId>
-				<version>3.0-Preview</version>
+				<version>${osgi_R4_version}</version>
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.glassfish</groupId>
 				<artifactId>javax.servlet</artifactId>
-				<version>3.0-Preview</version>
+				<version>${javax_servlet_version}</version>
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
 				<groupId>log4j</groupId>
 				<artifactId>log4j</artifactId>
+				<version>${log4j_version}</version>
 				<type>bundle</type>
-				<version>1.2.17</version>
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j_version}</version>
+				<type>bundle</type>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>${slf4j_version}</version>
+				<type>bundle</type>
+				<scope>provided</scope>
+			</dependency>
+			<!-- 
+			<dependency>
+				<groupId>com.thoughtworks.xstream</groupId>
+				<artifactId>xstream</artifactId>
+				<version>${xstream_version}</version>
+				<type>bundle</type>
+				<scope>provided</scope>
+            </dependency>
+             -->
+			<dependency>
+				<groupId>org.apache.servicemix.bundles</groupId>
+				<artifactId>org.apache.servicemix.bundles.xstream</artifactId>
+				<version>${xstream_version}</version>
+				<type>bundle</type>
+				<scope>provided</scope>
+			</dependency>
+			
+			<!-- 
+			<dependency>
+				<groupId>org.apache.servicemix.bundles</groupId>
+				<artifactId>org.apache.servicemix.bundles.dom4j</artifactId>
+				<version>${dom4j_version}</version>
+				<type>bundle</type>
+				<scope>provided</scope>
+			</dependency>
+			 -->
+            			
+			<dependency>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>flexjson</artifactId>
-				<version>1.2.1</version>
+				<version>${flexjson_version}</version>
 				<scope>provided</scope>
 			</dependency>
 			
@@ -197,6 +242,7 @@
         <module>common</module>
         <module>handlers-container-bio</module>
 		<module>srv-root</module>
+        <module>srv-config</module>
         <module>srv-srvc</module>
 		<module>srv-security</module>
 		<module>srv-dbsession-prv</module>
@@ -211,6 +257,7 @@
 		        <module>common</module>
 		        <module>handlers-container-bio</module>
 				<module>srv-root</module>
+                <module>srv-config</module>
 		        <module>srv-srvc</module>
 				<module>srv-security</module>
 				<module>srv-dbsession-prv</module>

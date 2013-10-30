@@ -8,7 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 import bio4j.server.common.BioRequestType;
 import bio4j.server.common.BioServlet;
@@ -17,7 +19,7 @@ import bio4j.server.common.BioServlet;
 @SuppressWarnings("serial")
 @WebServlet(urlPatterns = "/srvc")
 public class BioSrvcServlet extends BioServlet {
-	public static Logger LOG = Logger.getLogger(BioSrvcServlet.class);
+	public static Logger LOG = LoggerFactory.getLogger(BioSrvcServlet.class);
 
     private final String csRequestTypeParamName = "rqtp";
     private final String csBioCodeParamName = "rqbc";

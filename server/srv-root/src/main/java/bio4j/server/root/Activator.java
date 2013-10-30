@@ -1,6 +1,5 @@
 package bio4j.server.root;
 
-import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
@@ -8,12 +7,14 @@ import org.osgi.framework.InvalidSyntaxException;
 import org.osgi.framework.ServiceEvent;
 import org.osgi.framework.ServiceListener;
 import org.osgi.framework.ServiceReference;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import bio4j.server.api.BioEnvironment;
 import bio4j.server.api.services.BioService;
 
 public class Activator implements BundleActivator {
-	public static Logger LOG = Logger.getLogger(Activator.class);
+	public static Logger LOG = LoggerFactory.getLogger(Activator.class);
 	private void fireEvent_REGISTERED(BundleContext context, ServiceListener serviceListiner, String filter) throws InvalidSyntaxException {
 		ServiceReference[] lst = context.getServiceReferences(null, filter);
 		for (int i = 0; lst != null && i < lst.length; i++) {
@@ -66,7 +67,7 @@ public class Activator implements BundleActivator {
 				if(service instanceof BioService){
 					BioService bioService = (BioService)service;
 					EnvironmentImpl.getInstance().registerService(bioService);
-					bioService.init(EnvironmentImpl.getInstance());
+					bioService.init(this.context, EnvironmentImpl.getInstance());
 					LOG.debug(sr + " is BioService. Environment injected.");
 				} else
 					LOG.debug(sr + " is not BioService.");

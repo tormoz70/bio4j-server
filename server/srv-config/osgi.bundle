@@ -1,0 +1,2 @@
+-classpath=/res
+Bundle-Activator:bio4j.server.config.Activator

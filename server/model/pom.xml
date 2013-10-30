@@ -21,4 +21,11 @@
 			</plugin>
 		</plugins>
 	</build>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.servicemix.bundles</groupId>
+			<artifactId>org.apache.servicemix.bundles.xstream</artifactId>
+			<type>bundle</type>
+		</dependency>
+	</dependencies>
 </project>

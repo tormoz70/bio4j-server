@@ -12,7 +12,7 @@
 	<description><![CDATA[
     	Реализация сервиса для управления сессиями клиентов
     ]]></description>
-	<packaging>jar</packaging>
+	<packaging>bundle</packaging>
 	<build>
 		<!-- <finalName>${project.groupId}-server-srv-session</finalName> -->
 		<plugins>
@@ -36,8 +36,8 @@
 			<artifactId>osgi_R4_compendium</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
 			<type>bundle</type>
 		</dependency>
 		<dependency>

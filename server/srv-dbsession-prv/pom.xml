@@ -12,7 +12,7 @@
     <description><![CDATA[
     	Реализация сервиса для доступа к БД
     ]]></description>
-    <packaging>jar</packaging>
+    <packaging>bundle</packaging>
     <build>
         <plugins>
             <plugin>
