@@ -14,17 +14,18 @@ public class BioServiceActivatorBase<T extends BioService> implements BundleActi
 	public static Logger LOG;
 	
 	private ServiceRegistration serviceRegistration;
-	private Class<?> serviceClass;
+	private Class<? extends BioServiceBase> serviceClass;
 
 	public void start(BundleContext context) throws Exception {
-		this.serviceClass = (Class<?>)((ParameterizedType)this.getClass().
+		this.serviceClass = (Class<? extends BioServiceBase>)((ParameterizedType)this.getClass().
 			       getGenericSuperclass()).getActualTypeArguments()[0];
-		LOG = LoggerFactory.getLogger(this.serviceClass);
-		BioService newService = (BioService)this.serviceClass.newInstance();
+		LOG = LoggerFactory.getLogger(this.getClass());
+		BioServiceBase newService = this.serviceClass.newInstance();
+		newService.setBundleContext(context);
 		Class<?>[] intfs = newService.getClass().getInterfaces();
 		for (Class<?> intf : intfs) 
 			if(intf != BioService.class){
-				// регистрируем первый попавшийся интерфейс не BioServiceBase 
+				newService.setServiceName(intf.getName());
 				this.serviceRegistration = context.registerService(intf.getName(), newService, null);
 				LOG.debug("Service ["+this.serviceClass.getName()+"] - registred as "+intf.getName());
 				break;
@@ -33,7 +34,8 @@ public class BioServiceActivatorBase<T extends BioService> implements BundleActi
 	}
 
 	public void stop(BundleContext context) throws Exception {
-		this.serviceRegistration.unregister();
+		if(this.serviceRegistration != null)
+			this.serviceRegistration.unregister();
 		LOG.debug("Service ["+this.serviceClass.getName()+"] - stopped");
 	}
 

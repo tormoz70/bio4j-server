@@ -52,25 +52,25 @@ public class Activator implements BundleActivator {
 			this.context = context;
 		}
 		public void serviceChanged(ServiceEvent serviceEvent) {
-			LOG.debug("Event serviceChanged fired"); 
+			//LOG.debug("Event serviceChanged fired"); 
 			ServiceReference sr = serviceEvent.getServiceReference();
 			final int eventType = serviceEvent.getType();
 			switch (eventType) {
 			case ServiceEvent.UNREGISTERING: {
-				LOG.debug("Event 'UNREGISTERING'(" + eventType + ") for service " + sr + " is  fired");
+				//LOG.debug("Event 'UNREGISTERING'(" + eventType + ") for service " + sr + " is  fired");
 			}
 				break;
 			case ServiceEvent.REGISTERED: {
-				LOG.debug("Event 'REGISTERED' (" + eventType + ") for service " + sr + " is  fired");
+				//LOG.debug("Event 'REGISTERED' (" + eventType + ") for service " + sr + " is  fired");
 				Object service = context.getService(sr);
 
 				if(service instanceof BioService){
 					BioService bioService = (BioService)service;
 					EnvironmentImpl.getInstance().registerService(bioService);
-					bioService.init(this.context, EnvironmentImpl.getInstance());
-					LOG.debug(sr + " is BioService. Environment injected.");
-				} else
-					LOG.debug(sr + " is not BioService.");
+					bioService.init(EnvironmentImpl.getInstance());
+					//LOG.debug(sr + " is BioService. Inited.");
+				} //else
+					//LOG.debug(sr + " is not BioService.");
 			}
 				break;
 			default:

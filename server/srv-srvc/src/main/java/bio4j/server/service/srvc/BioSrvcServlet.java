@@ -13,12 +13,12 @@ import org.slf4j.LoggerFactory;
 
 
 import bio4j.server.common.BioRequestType;
-import bio4j.server.common.BioServlet;
+import bio4j.server.common.BioServletBase;
 
 
 @SuppressWarnings("serial")
 @WebServlet(urlPatterns = "/srvc")
-public class BioSrvcServlet extends BioServlet {
+public class BioSrvcServlet extends BioServletBase {
 	public static Logger LOG = LoggerFactory.getLogger(BioSrvcServlet.class);
 
     private final String csRequestTypeParamName = "rqtp";

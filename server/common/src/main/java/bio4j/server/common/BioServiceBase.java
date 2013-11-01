@@ -16,11 +16,18 @@ public abstract class BioServiceBase implements BioService {
 
 	private BioEnvironment environment;
 	private BundleContext bundleContext;
+	private String serviceName;
+	
+	public void setBundleContext(BundleContext bundleContext) {
+		this.bundleContext = bundleContext;
+	}
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+	}
 	
 	@Override
-	public void init(BundleContext bundleContext, BioEnvironment environment) {
+	public void init(BioEnvironment environment) {
 		this.environment = environment; 
-		this.bundleContext = bundleContext;
 		this.doOnInit();
 	}
 
@@ -32,6 +39,10 @@ public abstract class BioServiceBase implements BioService {
 	@Override
 	public BundleContext getBundleContext() {
 		return this.bundleContext;
+	}
+	@Override
+	public String getServiceName() {
+		return this.serviceName;
 	}
 	
 	protected void doOnInit() {

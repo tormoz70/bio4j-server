@@ -43,11 +43,6 @@
 									<artifactId>slf4j-log4j12</artifactId>
 									<version>${slf4j_version}</version>
 								</artifactItem>
-								<artifactItem>
-									<groupId>org.apache.servicemix.bundles</groupId>
-									<artifactId>org.apache.servicemix.bundles.xstream</artifactId>
-									<version>${xstream_version}</version>
-								</artifactItem>
             								 
 								<artifactItem>
 									<groupId>${project.groupId}</groupId>
@@ -97,13 +92,18 @@
 								</artifactItem>
 								<artifactItem>
 									<groupId>${project.groupId}</groupId>
-									<artifactId>${groupId}.server.handlers.container.bio</artifactId>
+									<artifactId>${groupId}.server.service.handler.provider.bio</artifactId>
 									<version>${project.version}</version>
 								</artifactItem>
 								
 								<artifactItem>
 									<groupId>${project.groupId}</groupId>
 									<artifactId>${groupId}.server.service.root</artifactId>
+									<version>${project.version}</version>
+								</artifactItem>
+								<artifactItem>
+									<groupId>${project.groupId}</groupId>
+									<artifactId>${groupId}.server.service.config</artifactId>
 									<version>${project.version}</version>
 								</artifactItem>
 								<artifactItem>
@@ -136,53 +136,4 @@
 			</plugin>
 		</plugins>
 	</build>
-<!-- 	    
-	<dependencies>
-	    <dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>${project.groupId}.server.model</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>${project.groupId}.server.api</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>${project.groupId}.server.common</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>${project.groupId}.server.handlers.container.bio</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>${project.groupId}.server.service.root</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>${project.groupId}.server.service.security</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>${project.groupId}.server.service.dbsession.provider</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>${project.groupId}.server.service.httpsession.provider</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>${project.groupId}.server.service.srvc</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-	</dependencies>
- -->	
 </project>

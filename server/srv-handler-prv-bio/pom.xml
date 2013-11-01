@@ -8,25 +8,16 @@
 		<artifactId>server</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>${project.groupId}.server.handlers.container.bio</artifactId>
+	<artifactId>${project.groupId}.server.service.handler.provider.bio</artifactId>
 	<description><![CDATA[
     	Контейнер обработчиков запросов протокола Bio
     ]]></description>
-	<packaging>jar</packaging>
+	<packaging>bundle</packaging>
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
-				<configuration>
-                    <instructions>
-                        <Embed-Transitive>true</Embed-Transitive>
-                        <!-- <Embed-Dependency>bio4j.common.utils</Embed-Dependency> -->
-                        <Embed-Dependency>bio4j.common.utils;scope=runtime|compile;optional=false;inline=true</Embed-Dependency> 
-                        <Import-Package>*</Import-Package>
-                        <!-- <Export-Package>bio4j.common.utils</Export-Package> -->
-                    </instructions>
-                </configuration>                
 			</plugin>
 		</plugins>
 	</build>
@@ -35,7 +26,7 @@
 			<groupId>org.glassfish</groupId>
 			<artifactId>javax.servlet</artifactId>
 		</dependency>
-	    <dependency>
+		<dependency>
 			<groupId>org.osgi</groupId>
 			<artifactId>osgi_R4_core</artifactId>
 		</dependency>

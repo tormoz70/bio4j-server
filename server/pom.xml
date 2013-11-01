@@ -139,32 +139,6 @@
 				<type>bundle</type>
 				<scope>provided</scope>
 			</dependency>
-			<!-- 
-			<dependency>
-				<groupId>com.thoughtworks.xstream</groupId>
-				<artifactId>xstream</artifactId>
-				<version>${xstream_version}</version>
-				<type>bundle</type>
-				<scope>provided</scope>
-            </dependency>
-             -->
-			<dependency>
-				<groupId>org.apache.servicemix.bundles</groupId>
-				<artifactId>org.apache.servicemix.bundles.xstream</artifactId>
-				<version>${xstream_version}</version>
-				<type>bundle</type>
-				<scope>provided</scope>
-			</dependency>
-			
-			<!-- 
-			<dependency>
-				<groupId>org.apache.servicemix.bundles</groupId>
-				<artifactId>org.apache.servicemix.bundles.dom4j</artifactId>
-				<version>${dom4j_version}</version>
-				<type>bundle</type>
-				<scope>provided</scope>
-			</dependency>
-			 -->
             			
 			<dependency>
 				<groupId>${project.groupId}</groupId>
@@ -240,7 +214,7 @@
 		<module>model</module>
 		<module>api</module>
         <module>common</module>
-        <module>handlers-container-bio</module>
+        <module>srv-handler-prv-bio</module>
 		<module>srv-root</module>
         <module>srv-config</module>
         <module>srv-srvc</module>
@@ -255,7 +229,7 @@
 				<module>model</module>
 				<module>api</module>
 		        <module>common</module>
-		        <module>handlers-container-bio</module>
+                <module>srv-handler-prv-bio</module>
 				<module>srv-root</module>
                 <module>srv-config</module>
 		        <module>srv-srvc</module>

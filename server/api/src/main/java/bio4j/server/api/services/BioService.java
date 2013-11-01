@@ -7,7 +7,8 @@ import bio4j.server.api.Delegate;
 
 
 public interface BioService {
-    void init(BundleContext bundleContext, BioEnvironment environment);
+    void init(BioEnvironment environment);
     BioEnvironment getEnvironment();
     BundleContext getBundleContext();
+    String getServiceName();
 }

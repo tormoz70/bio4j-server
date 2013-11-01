@@ -46,28 +46,7 @@
 			<artifactId>slf4j-api</artifactId>
 			<type>bundle</type>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.servicemix.bundles</groupId>
-			<artifactId>org.apache.servicemix.bundles.xstream</artifactId>
-			<type>bundle</type>
-		</dependency>
-		<!--  
-		<dependency>
-			<groupId>org.apache.servicemix.bundles</groupId>
-			<artifactId>org.apache.servicemix.bundles.dom4j</artifactId>
-			<type>bundle</type>
-		</dependency>
-		 -->
-		 <!-- 
-		<dependency>
-			<groupId>com.thoughtworks.xstream</groupId>
-			<artifactId>xstream</artifactId>
-			<version>1.4.5</version>
-			<type>bundle</type>
-			<scope>provided</scope>
-        </dependency>
-		 -->
-		  
+
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>${project.groupId}.server.api</artifactId>
@@ -79,6 +58,10 @@
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>${project.groupId}.server.common</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>${project.groupId}.common.utils</artifactId>
 		</dependency>
 	</dependencies>
 </project>

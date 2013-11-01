@@ -1,5 +1,5 @@
 package bio4j.server.api.handlers;
 
 
-public interface Ping {
+public interface BioHandler {
 }

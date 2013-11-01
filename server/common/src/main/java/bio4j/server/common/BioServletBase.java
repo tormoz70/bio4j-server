@@ -14,7 +14,7 @@ import bio4j.server.api.BioEnvironment;
 import bio4j.server.api.services.BioService;
 import bio4j.server.api.services.BioSrvcService;
 
-public abstract class BioServlet extends HttpServlet {
+public abstract class BioServletBase extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private BioService service;

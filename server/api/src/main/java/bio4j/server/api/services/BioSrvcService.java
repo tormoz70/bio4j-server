@@ -1,4 +1,4 @@
 package bio4j.server.api.services;
 
-public interface BioSrvcService {
+public interface BioSrvcService extends BioService {
 }
