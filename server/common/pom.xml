@@ -52,5 +52,9 @@
 			<groupId>${project.groupId}</groupId>
 			<artifactId>${project.groupId}.server.api</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>${project.groupId}.server.helper.faces.bio</artifactId>
+		</dependency>
 	</dependencies>
 </project>

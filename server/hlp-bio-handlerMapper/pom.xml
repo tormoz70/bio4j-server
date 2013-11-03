@@ -8,13 +8,12 @@
         <artifactId>server</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>${project.groupId}.server.service.security</artifactId>
+    <artifactId>${project.groupId}.server.helper.bio.handlerMapper</artifactId>
     <description><![CDATA[
-    	Реализация сервиса для аутентификации пользователей
+    	Реализация "помощника" для создания карты запросов
     ]]></description>
     <packaging>bundle</packaging>
     <build>
-<!--         <finalName>${project.groupId}-server-srv-security</finalName> -->
         <plugins>
             <plugin>
                 <groupId>org.apache.felix</groupId>
@@ -32,12 +31,26 @@
             <artifactId>osgi_R4_compendium</artifactId>
         </dependency>
 		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<type>bundle</type>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>${project.groupId}.common.utils</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>${project.groupId}.server.api</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>${project.groupId}.server.model</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>${project.groupId}.server.helper.faces.bio</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>

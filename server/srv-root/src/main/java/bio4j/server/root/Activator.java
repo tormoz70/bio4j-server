@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import bio4j.server.api.BioEnvironment;
+import bio4j.server.api.helpers.BioHelper;
 import bio4j.server.api.services.BioService;
 
 public class Activator implements BundleActivator {
@@ -69,8 +70,11 @@ public class Activator implements BundleActivator {
 					EnvironmentImpl.getInstance().registerService(bioService);
 					bioService.init(EnvironmentImpl.getInstance());
 					//LOG.debug(sr + " is BioService. Inited.");
-				} //else
-					//LOG.debug(sr + " is not BioService.");
+				} else if(service instanceof BioHelper){
+					BioHelper bioHelper = (BioHelper)service;
+						EnvironmentImpl.getInstance().registerHelper(bioHelper);
+						//LOG.debug(sr + " is BioService. Inited.");
+					}
 			}
 				break;
 			default:

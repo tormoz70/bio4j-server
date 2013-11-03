@@ -36,7 +36,7 @@ public class EnvironmentImpl implements BioEnvironment {
 		return false;
 	}
 	
-	private void refreshServiceHelperInjection(BioService service, BioHelper helper) {
+	private static void refreshServiceHelperInjection(BioService service, BioHelper helper) {
 		Field[] fields = service.getClass().getDeclaredFields();
 		for(Field field : fields){
 			if(field.getAnnotation(InjectHelper.class) != null) {
@@ -51,7 +51,14 @@ public class EnvironmentImpl implements BioEnvironment {
 	}
 	
 	private void refreshAllServicesHelperInjection(BioService service) {
-		
+		for(BioHelper helper : this.helperRegistry.values()) {
+			refreshServiceHelperInjection(service, helper);
+		}
+	}
+	private void refreshAllServicesHelperInjection(BioHelper helper) {
+		for(BioService service : this.serviceRegistry.values()) {
+			refreshServiceHelperInjection(service, helper);
+		}
 	}
 	
 	private Hashtable<String, BioService> serviceRegistry = new Hashtable<String, BioService>();
@@ -71,6 +78,15 @@ public class EnvironmentImpl implements BioEnvironment {
 		
 	}
 
+	private Hashtable<String, BioHelper> helperRegistry = new Hashtable<String, BioHelper>();
+
+	@Override
+	public void registerHelper(BioHelper helper) {
+		this.helperRegistry.put(helper.getHelperName(), helper);
+		this.refreshAllServicesHelperInjection(helper);
+		
+	}
+	
 	@Override
 	public BioService getService(String serviceName) {
 		if(this.serviceRegistry.containsKey(serviceName))
@@ -103,5 +119,6 @@ public class EnvironmentImpl implements BioEnvironment {
 	public DatabaseProvider getDatabaseProvider() {
 		return this.databaseProvider;
 	}
+
 	
 }

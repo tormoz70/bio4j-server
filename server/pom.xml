@@ -197,6 +197,12 @@
 				<version>${project.version}</version>
 				<scope>provided</scope>
 			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>${project.groupId}.server.helper.faces.bio</artifactId>
+				<version>${project.version}</version>
+				<scope>provided</scope>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -214,6 +220,8 @@
 		<module>model</module>
 		<module>api</module>
         <module>common</module>
+        <module>hlp-faces-bio</module>
+        <module>hlp-bio-handlerMapper</module>
         <module>srv-handler-prv-bio</module>
 		<module>srv-root</module>
         <module>srv-config</module>
@@ -229,6 +237,8 @@
 				<module>model</module>
 				<module>api</module>
 		        <module>common</module>
+                <module>hlp-faces-bio</module>
+                <module>hlp-bio-handlerMapper</module>
                 <module>srv-handler-prv-bio</module>
 				<module>srv-root</module>
                 <module>srv-config</module>

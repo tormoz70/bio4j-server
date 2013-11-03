@@ -8,13 +8,12 @@
         <artifactId>server</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>${project.groupId}.server.service.security</artifactId>
+    <artifactId>${project.groupId}.server.helper.faces.bio</artifactId>
     <description><![CDATA[
-    	Реализация сервиса для аутентификации пользователей
+    	Описание интерфесов "помощников" для фреймворка Bio
     ]]></description>
-    <packaging>bundle</packaging>
+    <packaging>jar</packaging>
     <build>
-<!--         <finalName>${project.groupId}-server-srv-security</finalName> -->
         <plugins>
             <plugin>
                 <groupId>org.apache.felix</groupId>
@@ -22,26 +21,22 @@
             </plugin>
         </plugins>
     </build>
-    <dependencies>
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>osgi_R4_core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>osgi_R4_compendium</artifactId>
-        </dependency>
+	<dependencies>
 		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>${project.groupId}.server.api</artifactId>
+			<groupId>org.osgi</groupId>
+			<artifactId>osgi_R4_core</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.servlet</artifactId>
+		</dependency>
+	    <dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>${project.groupId}.server.model</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>${project.groupId}.server.common</artifactId>
+			<artifactId>${project.groupId}.server.api</artifactId>
 		</dependency>
 	</dependencies>
 </project>
